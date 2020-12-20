@@ -121,7 +121,7 @@ def define_video_scales(scales):
                         np.linspace(max_h, min_h, 2 * frames_per_resize),
                         np.linspace(min_h, min_h, 2 * frames_per_resize)])
 
-    return zip(x, y)
+    return list(zip(x, y))
 
 
 def generate_collage_and_outputs(conf, gan, input_tensor):
