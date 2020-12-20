@@ -193,7 +193,7 @@ def test_homo(conf, gan, input_tensor, must_divide=8):
 
                     Image.fromarray(out, 'RGB').save(conf.output_dir_path + '/scale_%02d_%02d_transform %s_ingan.png' % (int(10*scale1), int(10*scale2), shift_str))
                     # Image.fromarray(regular_out, 'RGB').save(conf.output_dir_path + '/scale_%02d_%02d_transform %s_ref.png' % (scale1, scale2, shift_str))
-                    print ind, '/', total, 'scale:', scale, 'shift:', shifts
+                    print (ind, '/', total, 'scale:', scale, 'shift:', shifts)
 
 
 def main():
@@ -213,12 +213,12 @@ def main():
         if conf.test_non_rect:
             test_homo(conf, gan, input_tensor)
 
-        print 'Done with %s' % conf.input_image_path
+        print ('Done with %s' % conf.input_image_path)
 
     except KeyboardInterrupt:
         raise
     except Exception as e:
-        # print 'Something went wrong with %s (%d/%d), iter %dk' % (input_image_path, i, n_files, snapshot_iter)
+        # print ('Something went wrong with %s (%d/%d), iter %dk' % (input_image_path, i, n_files, snapshot_iter))
         print_exc()
 
 
